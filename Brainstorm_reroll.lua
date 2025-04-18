@@ -79,9 +79,17 @@ function Brainstorm.auto_reroll()
 			for i = 1, Brainstorm.SETTINGS.autoreroll.searchForSoul do
 				local soul_found = false
 				for i = 1, 5 do
-					if pseudorandom(Brainstorm.pseudoseed("soul_Tarot1" .. seed_found)) > 0.997 then
+					-- if pseudorandom(Brainstorm.pseudoseed("soul_Tarot1" .. seed_found)) > 0.997 then
+					-- 	soul_found = true
+					-- end
+					if pseudorandom(Brainstorm.pseudoseed("soul_c_poke_masterballItem1", seed_found)) > 0.997 then
+						--seems to work if player is searching for Pocket Packs
 						soul_found = true
 					end
+					-- if pseudorandom(Brainstorm.pseudoseed("soul_c_poke_masterballSpectral1", seed_found)) > 0.997 then
+					-- 	--seems to work if player is searching for Spectral Packs
+					-- 	soul_found = true
+					-- end
 				end
 				if not soul_found then
 					seed_found = nil

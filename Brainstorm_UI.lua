@@ -20,6 +20,7 @@ Brainstorm.SearchTagList = {
 	["Economy Tag"]="tag_economy",
 	["Skip Tag"]="tag_skip",
 	["D6 Tag"]="tag_d_six",
+	["Pocket Tag"]="tag_poke_pocket_tag",
 }
 
 Brainstorm.SearchPackList = {
@@ -29,6 +30,7 @@ Brainstorm.SearchPackList = {
 	["Standard"] = {"p_standard_normal_1","p_standard_normal_2","p_standard_normal_3","p_standard_normal_4","p_standard_jumbo_1","p_standard_jumbo_2","p_standard_mega_1", "p_standard_mega_2"},
 	["Buffoon"] = {"p_buffoon_normal_1","p_buffoon_normal_2","p_buffoon_jumbo_1","p_buffoon_mega_1"},
 	["Spectral"] = {"p_spectral_normal_1","p_spectral_normal_2","p_spectral_jumbo_1","p_spectral_mega_1"},
+	["Pocket"] = {"p_poke_pokepack_normal_1","p_poke_pokepack_normal_2","p_poke_pokepack_normal_3","p_poke_pokepack_normal_4","p_poke_pokepack_jumbo_1","p_poke_pokepack_jumbo_2","p_poke_pokepack_mega_1","p_poke_pokepack_mega_2"},
 	["Normal Arcana"] = {"p_arcana_normal_1","p_arcana_normal_2","p_arcana_normal_3","p_arcana_normal_4"},
 	["Jumbo Arcana"] = {"p_arcana_jumbo_1","p_arcana_jumbo_2"},
 	["Mega Arcana"] = {"p_arcana_mega_1", "p_arcana_mega_2"},
@@ -44,6 +46,9 @@ Brainstorm.SearchPackList = {
 	["Normal Spectral"] = {"p_spectral_normal_1","p_spectral_normal_2"},
 	["Jumbo Spectral"] = {"p_spectral_jumbo_1"},
 	["Mega Spectral"] = {"p_spectral_mega_1"},
+	["Normal Pocket"] = {"p_poke_pokepack_normal_1","p_poke_pokepack_normal_2","p_poke_pokepack_normal_3","p_poke_pokepack_normal_4"},
+	["Jumbo Pocket"] = {"p_poke_pokepack_jumbo_1","p_poke_pokepack_jumbo_2"},
+	["Mega Pocket"] = {"p_poke_pokepack_mega_1","p_poke_pokepack_mega_2"}
 }
 Brainstorm.seedsPerFrame = {
     ["500"] = 500,
@@ -51,8 +56,8 @@ Brainstorm.seedsPerFrame = {
     ["1000"] = 1000,
 }
 
-local searchTagKeys = {"None", "Charm Tag", "Double Tag", "Uncommon Tag", "Rare Tag", "Holographic Tag", "Foil Tag", "Polychrome Tag", "Investment Tag", "Voucher Tag", "Boss Tag", "Juggle Tag", "Coupon Tag", "Economy Tag", "Skip Tag", "D6 Tag"}
-local searchPackKeys = {"None", "Arcana", "Celestial", "Standard", "Buffoon", "Spectral", "Normal Arcana", "Jumbo Arcana", "Mega Arcana", "Normal Celestial", "Jumbo Celestial", "Mega Celestial", "Normal Standard", "Jumbo Standard", "Mega Standard", "Normal Buffoon", "Jumbo Buffoon", "Mega Buffoon", "Normal Spectral", "Jumbo Spectral", "Mega Spectral"}
+local searchTagKeys = {"None", "Charm Tag", "Double Tag", "Uncommon Tag", "Rare Tag", "Holographic Tag", "Foil Tag", "Polychrome Tag", "Investment Tag", "Voucher Tag", "Boss Tag", "Juggle Tag", "Coupon Tag", "Economy Tag", "Skip Tag", "D6 Tag", "Pocket Tag"}
+local searchPackKeys = {"None", "Arcana", "Celestial", "Standard", "Buffoon", "Spectral", "Pocket", "Normal Arcana", "Jumbo Arcana", "Mega Arcana", "Normal Celestial", "Jumbo Celestial", "Mega Celestial", "Normal Standard", "Jumbo Standard", "Mega Standard", "Normal Buffoon", "Jumbo Buffoon", "Mega Buffoon", "Normal Spectral", "Jumbo Spectral", "Mega Spectral", "Normal Pocket", "Jumbo Pocket", "Mega Pocket"}
 local seedsPerFrame = {"500", "750", "1000"}
 -- print(Brainstorm.FUNCS.inspect(searchTagKeys))
 
