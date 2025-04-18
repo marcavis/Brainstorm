@@ -8,7 +8,7 @@ Brainstorm.SearchTagList = {
 	["Uncommon Tag"]="tag_uncommon",
 	["Rare Tag"]="tag_rare",
 	["Holographic Tag"]="tag_holo",
-  ["Foil Tag"]="tag_foil",
+  	["Foil Tag"]="tag_foil",
 	["Polychrome Tag"]="tag_polychrome",
 	["Investment Tag"]="tag_investment",
 	["Voucher Tag"]="tag_voucher",
@@ -20,7 +20,7 @@ Brainstorm.SearchTagList = {
 	["Economy Tag"]="tag_economy",
 	["Skip Tag"]="tag_skip",
 	["D6 Tag"]="tag_d_six",
-	["Pocket Tag"]="tag_poke_pocket_tag",
+	["Pocket Tag (doesn't work?)"]="tag_poke_pocket_tag",
 }
 
 Brainstorm.SearchPackList = {
@@ -56,7 +56,7 @@ Brainstorm.seedsPerFrame = {
     ["1000"] = 1000,
 }
 
-local searchTagKeys = {"None", "Charm Tag", "Double Tag", "Uncommon Tag", "Rare Tag", "Holographic Tag", "Foil Tag", "Polychrome Tag", "Investment Tag", "Voucher Tag", "Boss Tag", "Juggle Tag", "Coupon Tag", "Economy Tag", "Skip Tag", "D6 Tag", "Pocket Tag"}
+local searchTagKeys = {"None", "Charm Tag", "Double Tag", "Uncommon Tag", "Rare Tag", "Holographic Tag", "Foil Tag", "Polychrome Tag", "Investment Tag", "Voucher Tag", "Boss Tag", "Juggle Tag", "Coupon Tag", "Economy Tag", "Skip Tag", "D6 Tag", "Pocket Tag (doesn't work?)"}
 local searchPackKeys = {"None", "Arcana", "Celestial", "Standard", "Buffoon", "Spectral", "Pocket", "Normal Arcana", "Jumbo Arcana", "Mega Arcana", "Normal Celestial", "Jumbo Celestial", "Mega Celestial", "Normal Standard", "Jumbo Standard", "Mega Standard", "Normal Buffoon", "Jumbo Buffoon", "Mega Buffoon", "Normal Spectral", "Jumbo Spectral", "Mega Spectral", "Normal Pocket", "Jumbo Pocket", "Mega Pocket"}
 local seedsPerFrame = {"500", "750", "1000"}
 -- print(Brainstorm.FUNCS.inspect(searchTagKeys))
@@ -108,9 +108,17 @@ function create_tabs(args)
 							label = "Charm Tag/Arcana Pack: Number of Souls",
 							scale = 0.8,
 							w = 4,
-							options = {0,1,2},
+							options = {0,1,2}, --can't seem to work for 2 souls...
 							opt_callback = "change_search_soul_count",
 							current_option = Brainstorm.SETTINGS.autoreroll.searchForSoul + 1 or 1,
+						}),
+						create_option_cycle({
+							label = "Pocket Tag/Pocket Pack: Number of Master Balls",
+							scale = 0.8,
+							w = 4,
+							options = {0,1}, --can't seem to work for 2 master balls...
+							opt_callback = "change_search_masterball_count",
+							current_option = Brainstorm.SETTINGS.autoreroll.searchForMasterBall + 1 or 1,
 						}),
                         create_option_cycle({
 							label = "Rerolls per Frame",

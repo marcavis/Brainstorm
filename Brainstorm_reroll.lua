@@ -20,6 +20,11 @@ G.FUNCS.change_search_soul_count = function(x)
 	nativefs.write(lovely.mod_dir .. "/Brainstorm/settings.lua", STR_PACK(Brainstorm.SETTINGS))
 end
 
+G.FUNCS.change_search_masterball_count = function(x)
+	Brainstorm.SETTINGS.autoreroll.searchForMasterBall = x.to_val
+	nativefs.write(lovely.mod_dir .. "/Brainstorm/settings.lua", STR_PACK(Brainstorm.SETTINGS))
+end
+
 G.FUNCS.change_seeds_per_frame = function(x)
 	Brainstorm.SETTINGS.autoreroll.seedsPerFrameID = x.to_key
 	Brainstorm.SETTINGS.autoreroll.seedsPerFrame = Brainstorm.seedsPerFrame[x.to_val]
@@ -79,9 +84,21 @@ function Brainstorm.auto_reroll()
 			for i = 1, Brainstorm.SETTINGS.autoreroll.searchForSoul do
 				local soul_found = false
 				for i = 1, 5 do
-					-- if pseudorandom(Brainstorm.pseudoseed("soul_Tarot1" .. seed_found)) > 0.997 then
-					-- 	soul_found = true
-					-- end
+					if pseudorandom(Brainstorm.pseudoseed("soul_Tarot1" .. seed_found)) > 0.997 then
+						soul_found = true
+					end
+				end
+				if not soul_found then
+					seed_found = nil
+					break
+				end
+			end
+		end
+		if seed_found and Brainstorm.SETTINGS.autoreroll.searchForMasterBall then
+			-- Check if item pack from skip has The Soul
+			for i = 1, Brainstorm.SETTINGS.autoreroll.searchForMasterBall do
+				local soul_found = false
+				for i = 1, 5 do
 					if pseudorandom(Brainstorm.pseudoseed("soul_c_poke_masterballItem1", seed_found)) > 0.997 then
 						--seems to work if player is searching for Pocket Packs
 						soul_found = true
